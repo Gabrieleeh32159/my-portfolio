@@ -1,0 +1,22 @@
+---
+const gradient_style: String =
+  "bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text";
+const typing_animated_style: String =
+  "overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-8xl font-bold";
+---
+<section class="min-h-[350px] min-w-[800px]">
+    <p class="text-white text-6xl font-bold">Hi! I'm</p>
+    <div class="w-max">
+      <p class={`animate-appone ${typing_animated_style} ${gradient_style}`}>
+        Gabriel <br class="md:hidden"> Espinoza
+      </p>
+      <p class={`animate-apptwo ${typing_animated_style} ${gradient_style}`}>
+          a frontend <br class="md:hidden"> dev<span class="md:hidden">eloper</span>
+      </>
+      <p
+        class={`animate-appthree ${typing_animated_style} ${gradient_style}`}
+      >
+        a CS student
+      </>
+    </div>
+  </section>
