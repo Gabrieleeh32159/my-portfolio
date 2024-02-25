@@ -1,0 +1,36 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  technologies: Array<string>;
+  url_image: string;
+}
+
+import { Image } from "astro:assets";
+import TicTacToe from "../images/TicTacToe.png";
+
+const { name, description, technologies, url_image } = Astro.props;
+
+const sources = [
+  {
+    name: "Tic Tac Toe",
+    img: TicTacToe,
+  },
+];
+---
+
+<section
+  class={`border rounded-2xl w-[500px] h-[350px] flex flex-col justify-end overflow-hidden`}
+>
+  <Image
+    src={sources.find((source) => source.name == name)?.img}
+    alt={`Example image for project ${name}`}
+    width="500"
+    height="350"
+    class="absolute"
+  />
+  <div class="bg-white opacity-60 p-3">
+    <h1 class="font-bold text-black text-5xl">{name}</h1>
+    <p class="text-slate-800">{description}</p>
+  </div>
+</section>
