@@ -1,11 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PresentationCard from "../components/PresentationCard.astro";
-import Project from "../components/Project.astro";
+import Projects from "../components/Projects.astro";
+import AboutMe from "../components/AboutMe.astro";
 ---
 
 <Layout title="Hi! I'm Gabriel">
-  <main class="w-full min-h-screen flex items-center justify-center">
-    <Project name="Tic Tac Toe" description="Tic Tac Toe game created in react." technologies={["tailwindcss", "react"]} url_image="../images/TicTacToe.png"/>
+  <main class="w-full min-h-screen flex items-center justify-center px-3">
+    <PresentationCard />
   </main>
 </Layout>

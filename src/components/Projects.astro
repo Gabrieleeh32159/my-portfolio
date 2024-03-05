@@ -1,0 +1,33 @@
+---
+interface Project {
+    name: string;
+    description: string;
+    technologies: Array<string>;
+    image: any;
+}
+
+import Project from "./Project.astro"
+import TicTacToe from "../images/TicTacToe.png"
+
+
+const projects : Array<Project> = [
+    {
+        name: "Tic Tac Toe",
+        description: "Tic Tac Toe game created in react.",
+        technologies: ["tailwindcss", "react"],
+        image: TicTacToe
+    },
+    {
+        name: "Tic Tac Toe",
+        description: "Tic Tac Toe game created in react.",
+        technologies: ["tailwindcss", "react"],
+        image: TicTacToe
+    }
+] 
+---
+
+<div class=" w-full flex flex-col items-center gap-y-10">
+    {
+        projects.map(project => <Project name={project.name} description={project.description} technologies={project.technologies} image={project.image}/>)
+    }
+</div>
