@@ -1,0 +1,45 @@
+---
+import NavLayout from "../layouts/NavLayout.astro";
+import TimeLineChunk from "../components/TimeLineChunk.astro";
+---
+
+<NavLayout title="About Gabriel">
+  <div class="flex items-center justify-center w-1/2 mt-5">
+    <div class="flex flex-col">
+        <h1 class="font-bold text-5xl mb-5">Working Experience</h1>
+        <ol class="relative border-s border-gray-200 dark:border-gray-700">
+          <TimeLineChunk
+            puesto="Audit Analytics Intern"
+            empresa="Pacifico Seguros & Prima AFP"
+            fechas="December 18th, 2023 - Now"
+            currently={true}
+            description="Worked as an Intern for the Pacifico Seguros & Prima AFP's Shared Services Center doing data analisis with Python, machine learning and Microsoft Suit (Power BI, Power Automate, etc)."
+          />
+          <TimeLineChunk
+            puesto="Bussines Analytics Trainee"
+            empresa="Banco de Crédito del Perú (BCP)"
+            fechas="January 1st, 2023 - March 30th, 2023"
+            currently={false}
+            description="Data extraction from Oracle Database, preprocessing and making a fully automatized report with, DAX and PowerBI."
+          />
+        </ol>
+        <h1 class="font-bold text-5xl mb-5">Awards and Certifications</h1>
+        <ol class="relative border-s border-gray-200 dark:border-gray-700">
+          <TimeLineChunk
+            puesto="Training Camp Argentina 2023"
+            empresa="Universidad de la Matanza"
+            fechas="June 15th, 2019"
+            currently={false}
+            description=`Went to Argentina after being admited to participate in a intensive bootcamp about Competitive Programming. Competitive programming is a sport when you solve problems using the fastest and the most efficent code.`
+          />
+          <TimeLineChunk
+            puesto="Bronze Medal"
+            empresa="Centroamerica and Caribe Physics Olimpiad"
+            fechas="June 15th, 2019"
+            currently={false}
+            description=`Passed Trought a national selective exam and I ended in 3rd place. Then traveled to Habana's University and won bronze medal in IV OCCAFI 2019.`
+          />
+        </ol>
+      </div>
+  </div>
+</NavLayout>

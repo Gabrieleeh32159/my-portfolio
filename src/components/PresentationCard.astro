@@ -2,16 +2,18 @@
 const gradient_style: String =
   "bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 text-transparent bg-clip-text";
 const typing_animated_style: String =
-  "overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-8xl font-bold";
+  "overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 text-6xl md:text-8xl lg:text-7xl font-bold";
 ---
-<section class="min-h-[350px] min-w-[800px]">
-    <p class="text-white text-6xl font-bold">Hi! I'm Gabriel</p>
-    <div class="w-max">
+<section class="w-full md:max-w-[590px] lg:max-w-[450px] overflow-hidden h-[190px]">
+  {// min-h-[350px] w-full lg:min-w-[800px]
+  }
+    <p class="text-white text-4xl md:text-6xl font-bold">Hi! I'm Gabriel</p>
+    <div class="w-auto md:text-4xl">
       <p class={`animate-appone ${typing_animated_style} ${gradient_style}`}>
-        a frontend <br class="md:hidden"> dev<span class="md:hidden">eloper</span>
+        fullstack <br class="md:hidden"> dev<span class="md:hidden">eloper</span>
       </p>
       <p class={`animate-apptwo ${typing_animated_style} ${gradient_style}`}>
-          a CS student
+          CS student
       </>
       <p
         class={`animate-appthree ${typing_animated_style} ${gradient_style}`}
