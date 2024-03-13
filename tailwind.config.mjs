@@ -22,21 +22,45 @@ export default {
 					}  
 			  	},
 				appone: {
+					"0%,32%": {
+						visibility: "visible",
+						height: "100%",
+						width: "100%"
+					},
 					"33%, 100%": {
-						display: "none"
+						// display: "none"
+						visibility: "hidden",
+						height: "0",
+						width: "0"
 					}
 				},
 				apptwo: {
 					"0%,33%": {
-						visibility: "hidden"
+						visibility: "hidden",
+						height: "0",
+						width: "0"
 					},
-					"66%, 100%": {
-						display: "none"
+					"34%,66%": {
+						visibility: "visible",
+						height: "100%",
+						width: "100%"
+					},
+					"66%,100%": {
+						visibility: "hidden",
+						height: "0",
+						width: "0"
 					}
 				},
 				appthree: {
 					"0%,66%": {
-						visibility: "hidden"
+						visibility: "hidden",
+						height: "0",
+						width: "0"
+					},
+					"67%,100%": {
+						visibility: "visible",
+						height: "100%",
+						with: "100%"
 					}
 				},
 			},
