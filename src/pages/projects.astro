@@ -13,21 +13,39 @@ interface Project {
 import Project from "../components/Project.astro"
 import TicTacToe from "../images/TicTacToe.png"
 import RealTimeChat from "../images/RealTimeChat.png"
+import UTECInvaders from "../images/UTECInvaders.png"
+import Competitive from "../images/Competitive.png"
 
-const technologies : Map<string, string> = new Map([
-    ["tailwindcss", '<span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-blue-900 text-blue-300">Tailwind CSS</span>'],
-    ["react", '<span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-blue-900 text-blue-300">React JS</span>'],
-    ["socketio", '<span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-green-900 text-green-300">Socket IO</span>'],
-    ["expressjs", '<span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-green-900 text-green-300">Express JS</span>'],
-    ["railway", '<span class="text-xs font-medium px-2.5 py-0.5 rounded-full bg-purple-900 text-purple-300">Railway</span>']
+const colors : Map<string, string> = new Map([
+    ['red', 'text-xs font-medium me-2 px-2.5 py-0.5 rounded-full bg-red-900 text-red-300'],
+    ['purple', 'text-xs font-medium px-2.5 py-0.5 rounded-full bg-purple-900 text-purple-300'],
+    ['green', 'text-xs font-medium px-2.5 py-0.5 rounded-full bg-green-900 text-green-300'],
+    ['blue', 'text-xs font-medium px-2.5 py-0.5 rounded-full bg-blue-900 text-blue-300']
+])
+
+const technologies_colors : Map<string, string> = new Map([
+    ["Tailwind CSS", 'blue'],
+    ["React JS", 'blue'],
+    ["Socket IO", 'green'],
+    ["Express JS", 'green'],
+    ["Railway", 'purple'],
+    ["Algorithms", 'red'],
+    ["Data Structures", 'red'],
+    ["C++", 'red'],
+    ["Python", 'blue'],
+    ["Pygame", 'green']
 ]);
+
+function get_technologies(technologies : Array<string>) {
+    return technologies.map(t => `<span class="${colors.get(technologies_colors.get(t) ?? '')}">${t}</span>`).join("")
+}
 
 
 const projects : Array<Project> = [
     {
         name: "Tic Tac Toe",
         description: "Tic Tac Toe game created in react.",
-        technologies: ["tailwindcss", "react", "railway"],
+        technologies: ["Tailwind CSS", "React JS", "Railway"],
         link: "https://tictactoe-production-33b1.up.railway.app",
         image: TicTacToe,
         dificulty: 2
@@ -35,50 +53,34 @@ const projects : Array<Project> = [
     {
         name: "Real Time Chat",
         description: "A real time chat where you can talk with an anonimous person!",
-        technologies: ["react", "socketio", "tailwindcss", "expressjs", "railway"],
+        technologies: ["React JS", "Socket IO", "Tailwind CSS", "Express JS", "Railway"],
         link: "https://real-time-chat-production-2aff.up.railway.app",
         image: RealTimeChat,
         dificulty: 3
     },
-    // {
-    //     name: "Tic Tac Toe",
-    //     description: "Tic Tac Toe game created in react.",
-    //     technologies: ["tailwindcss", "react"],
-    //     link: "https://tictactoe-production-33b1.up.railway.app",
-    //     image: TicTacToe,
-    //     dificulty: 2
-    // },
-    // {
-    //     name: "Tic Tac Toe",
-    //     description: "Tic Tac Toe game created in react.",
-    //     technologies: ["tailwindcss", "react"],
-    //     link: "https://tictactoe-production-33b1.up.railway.app",
-    //     image: TicTacToe,
-    //     dificulty: 2
-    // },
-    // {
-    //     name: "Tic Tac Toe",
-    //     description: "Tic Tac Toe game created in react.",
-    //     technologies: ["tailwindcss", "react"],
-    //     link: "https://tictactoe-production-33b1.up.railway.app",
-    //     image: TicTacToe,
-    //     dificulty: 2
-    // },
-    // {
-    //     name: "Tic Tac Toe",
-    //     description: "Tic Tac Toe game created in react.",
-    //     technologies: ["tailwindcss", "react"],
-    //     link: "https://tictactoe-production-33b1.up.railway.app",
-    //     image: TicTacToe,
-    //     dificulty: 2
-    // },
+    {
+        name: "Competitive Programming",
+        description: "My solutions for some Codeforces contests.",
+        technologies: ["Algorithms", "Data Structures", "C++"],
+        link: "https://github.com/Gabrieleeh32159/Entrenamiento_CPC/",
+        image: Competitive,
+        dificulty: 5
+    },
+    {
+        name: "UTEC Invaders",
+        description: "My version of Space Invaders Game made with Pygame.",
+        technologies: ["Python", "Pygame"],
+        link: "https://github.com/Gabrieleeh32159/UTEC_Invaders",
+        image: UTECInvaders,
+        dificulty: 5
+    }
 ] 
 ---
 <NavLayout title="Gabriel's projects">
   <main class="w-full min-h-screen flex items-center justify-center">
     <div class=" w-full flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 lg:max-w-7xl md:gap-6 items-center gap-y-10 px-6">
         {
-            projects.map(project => <Project name={project.name} description={project.description} link={project.link} technologies={project.technologies.map(tech => technologies.get(tech)).join("")} image={project.image}/>)
+            projects.map(project => <Project name={project.name} description={project.description} link={project.link} technologies={get_technologies(project.technologies)} image={project.image}/>)
         }
     </div>
   </main>
